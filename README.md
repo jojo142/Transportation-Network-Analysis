@@ -274,19 +274,6 @@ All visualizations saved as high-resolution PNG files (300 DPI).
 
 ---
 
-## 💼 Resume Bullets
-
-### Option 1 (Comprehensive)
-**Analyzed 180,519 transportation records** using Python, SQL, and machine learning to identify operational inefficiencies in delivery networks, discovering that targeted shipping mode optimization and geographic interventions could reduce late deliveries by 15-25% while improving customer satisfaction by 10-15 points
-
-### Option 2 (Technical Focus)
-**Designed normalized relational database** with 5 interconnected tables and executed 12+ complex SQL queries to analyze shipping performance across distribution centers, uncovering bottlenecks with 68% late delivery rate concentration and building predictive model achieving 87% AUC-ROC for real-time risk scoring
-
-### Option 3 (Business Impact)
-**Conducted comprehensive supply chain analysis** identifying $15M+ annual savings opportunity through dynamic shipping mode optimization, revealing that 15 geographic markets account for 68% of late deliveries and developing data-driven recommendations projected to improve on-time delivery rate from 45% to 60%
-
----
-
 ## 🎓 Skills Demonstrated
 
 ### Technical Skills
@@ -327,48 +314,6 @@ All visualizations saved as high-resolution PNG files (300 DPI).
 | Average Delivery Time | 0.3-0.5 day reduction |
 | Network Throughput | 12-18% capacity gain |
 
----
-
-## 🔄 Implementation Roadmap
-
-### Phase 1: Quick Wins (0-3 months)
-- Deploy real-time KPI dashboard
-- Launch pilot shipping mode optimization
-- Begin geographic assessment in CA and TX
-
-### Phase 2: Structural Improvements (3-6 months)
-- Expand optimization to 50% of network
-- Implement category-specific protocols
-- Complete route optimization for bottom 20%
-
-### Phase 3: Full Deployment (6-12 months)
-- Network-wide predictive risk scoring
-- Complete geographic initiative
-- Establish continuous improvement loop
-
----
-
-## 🤝 Alignment with Amazon Role
-
-This project directly demonstrates capabilities for **Data & Reporting Analyst, Relay Operations Center Tech & Ops Integration**:
-
-✅ **Drive continuous improvement** - Identified 15-25% late delivery reduction opportunity  
-✅ **Problem solve and design solutions** - Developed 7 strategic recommendations with implementation plans  
-✅ **Work with SQL** - Created normalized database with 12+ complex analytical queries  
-✅ **Support transportation programs** - Analysis framework applicable to Amazon's NA network  
-✅ **Configure shipping inputs** - Predictive model enables real-time decision optimization  
-✅ **Maintain documentation** - Comprehensive technical and executive documentation  
-
----
-
-## 📞 Contact
-
-**Samiya Islam**  
-Data Analytics Professional  
-
-*This project showcases end-to-end data analytics capabilities from data processing through strategic recommendation development.*
-
----
 
 ## 📝 License
 
@@ -384,4 +329,4 @@ This project uses the DataCo Smart Supply Chain dataset available under CC0: Pub
 
 ---
 
-**Last Updated:** December 2024
+**Last Updated:** December 2025
