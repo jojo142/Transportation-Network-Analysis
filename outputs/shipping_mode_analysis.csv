@@ -1,0 +1,5 @@
+Shipping Mode,Late_Count,Total_Shipments,Late_Rate,Avg_Days,Median_Days,Avg_Variance,Late_Rate_Pct,On_Time_Rate_Pct
+First Class,26513,27814,0.95,2.0,2.0,1.0,95.0,5.0
+Second Class,26987,35216,0.77,3.99,4.0,1.99,77.0,23.0
+Same Day,4454,9737,0.46,0.48,0.0,0.48,46.0,54.0
+Standard Class,41023,107752,0.38,4.0,4.0,-0.0,38.0,62.0
