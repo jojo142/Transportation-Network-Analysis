@@ -1,0 +1,30 @@
+# Data files
+data/
+datasets/
+visualizations/
+outputs/
+
+*.csv
+*.tsv
+*.json
+*.parquet
+
+# Model / embeddings
+*.pkl
+*.pt
+*.bin
+*.joblib
+*.h5
+
+# Large text files
+*.txt
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
