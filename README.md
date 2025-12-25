@@ -242,36 +242,6 @@ All visualizations saved as high-resolution PNG files (300 DPI).
 
 ---
 
-##  Skills Demonstrated
-
-### Technical Skills
-✅ Python programming (Pandas, NumPy, Matplotlib, Seaborn)  
-✅ SQL database design and complex queries  
-✅ Machine learning (Logistic Regression, Model Evaluation)  
-✅ Data visualization and storytelling  
-✅ Statistical analysis and hypothesis testing  
-✅ Database normalization (1NF-3NF)  
-✅ Predictive analytics and forecasting  
-
-### Business Skills
-✅ Transportation network optimization  
-✅ Operational efficiency analysis  
-✅ Strategic recommendation development  
-✅ Stakeholder communication  
-✅ Process improvement initiatives  
-✅ KPI dashboard design  
-✅ Cost-benefit analysis  
-
-### Domain Knowledge
-✅ Supply chain management  
-✅ Logistics and distribution  
-✅ Last-mile delivery optimization  
-✅ Customer satisfaction metrics  
-✅ Capacity planning  
-✅ Route optimization  
-
----
-
 ## Expected Business Impact
 
 | Impact Area | Projected Improvement |
