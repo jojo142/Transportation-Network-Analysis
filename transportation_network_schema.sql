@@ -1,6 +1,6 @@
 -- ============================================================================
 -- TRANSPORTATION NETWORK DATABASE SCHEMA
--- DataCo Supply Chain Analysis for Amazon Transportation Optimization
+-- DataCo Supply Chain Analysis 
 -- Author: Samiya Islam
 -- Date: December 2024
 -- ============================================================================
