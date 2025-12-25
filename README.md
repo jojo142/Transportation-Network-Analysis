@@ -1,12 +1,12 @@
 # Transportation Network Operations & Delivery Performance Analysis
 
-**Comprehensive Data Analytics Project for Amazon Transportation Network Optimization**
+**Comprehensive Data Analytics Project for Transportation Network Optimization**
 
 ---
 
-## 📊 Project Overview
+## Project Overview
 
-This project presents a comprehensive analysis of transportation network performance using the DataCo Smart Supply Chain dataset (180,519 shipment records). The analysis directly addresses Amazon Transportation Execution & Systems Team objectives for continuous improvement in North American transportation networks.
+This project presents a comprehensive analysis of transportation network performance using the DataCo Smart Supply Chain dataset (180,519 shipment records). The analysis directly addresses Transportation Execution & Systems Team objectives for continuous improvement in North American transportation networks.
 
 ### Key Objectives
 - Identify operational inefficiencies and bottlenecks in transportation networks
@@ -17,7 +17,7 @@ This project presents a comprehensive analysis of transportation network perform
 
 ---
 
-## 🎯 Business Problem
+## Business Problem
 
 Current state: **54.8% late delivery rate** across the network represents significant operational inefficiency and customer satisfaction risk.
 
@@ -29,7 +29,7 @@ Current state: **54.8% late delivery rate** across the network represents signif
 
 ---
 
-## 🔧 Technologies Used
+##  Technologies Used
 
 ### Data Processing & Analysis
 - **Python 3.8+** - Core programming language
@@ -54,7 +54,7 @@ Current state: **54.8% late delivery rate** across the network represents signif
 
 ---
 
-## 📈 Key Findings
+##  Key Findings
 
 ### 1. Shipping Mode Performance
 - **Standard Class**: 68.2% late delivery rate (4.1 days avg)
@@ -87,7 +87,7 @@ Current state: **54.8% late delivery rate** across the network represents signif
 
 ---
 
-## 💡 Strategic Recommendations
+##  Strategic Recommendations
 
 ### 1. Dynamic Shipping Mode Optimization
 Implement automated system to reallocate high-risk shipments from Standard to First Class.
@@ -116,7 +116,7 @@ Use historical patterns to forecast demand surges and allocate resources.
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 ```bash
@@ -168,7 +168,7 @@ node create_executive_report.js
 
 ---
 
-## 📊 Analysis Workflow
+## Analysis Workflow
 
 ### 1. Data Loading & Exploration
 - Load 180,519 records from CSV
@@ -207,7 +207,7 @@ node create_executive_report.js
 
 ---
 
-## 📋 SQL Database Schema
+## SQL Database Schema
 
 ### Tables
 1. **orders** - Main fact table with order details
@@ -229,7 +229,7 @@ See `transportation_network_schema.sql` for complete schema and queries.
 
 ---
 
-## 📈 Visualizations Generated
+##  Visualizations Generated
 
 1. **Delivery Status Distribution** - Pie and bar charts
 2. **Shipping Mode Analysis** - Late rates, volumes, delivery times, variance
@@ -242,7 +242,7 @@ All visualizations saved as high-resolution PNG files (300 DPI).
 
 ---
 
-## 🎓 Skills Demonstrated
+##  Skills Demonstrated
 
 ### Technical Skills
 ✅ Python programming (Pandas, NumPy, Matplotlib, Seaborn)  
@@ -272,7 +272,7 @@ All visualizations saved as high-resolution PNG files (300 DPI).
 
 ---
 
-## 📊 Expected Business Impact
+## Expected Business Impact
 
 | Impact Area | Projected Improvement |
 |------------|----------------------|
@@ -283,13 +283,13 @@ All visualizations saved as high-resolution PNG files (300 DPI).
 | Network Throughput | 12-18% capacity gain |
 
 
-## 📝 License
+##  License
 
 This project uses the DataCo Smart Supply Chain dataset available under CC0: Public Domain license from Kaggle.
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - **Dataset Source:** Fabian Constante, Instituto Politecnico de Leiria
 - **Platform:** Kaggle (https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis)
