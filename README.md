@@ -29,38 +29,6 @@ Current state: **54.8% late delivery rate** across the network represents signif
 
 ---
 
-## 📁 Project Structure
-
-```
-transportation-network-analysis/
-│
-├── transportation_network_analysis.ipynb    # Main Jupyter notebook with full analysis
-├── transportation_network_schema.sql        # SQL database schema and queries
-├── Transportation_Network_Analysis_Report.docx  # Executive report
-├── create_executive_report.js               # Script to generate report
-├── README.md                                 # This file
-│
-├── data/
-│   └── DataCoSupplyChainDataset.csv        # Source dataset (download from Kaggle)
-│
-├── outputs/
-│   ├── executive_summary.csv
-│   ├── shipping_mode_analysis.csv
-│   ├── state_performance_analysis.csv
-│   ├── category_performance_analysis.csv
-│   └── bottleneck_analysis.csv
-│
-└── visualizations/
-    ├── viz_delivery_status.png
-    ├── viz_shipping_mode_analysis.png
-    ├── viz_geographic_analysis.png
-    ├── viz_category_analysis.png
-    ├── viz_correlation_matrix.png
-    └── viz_model_performance.png
-```
-
----
-
 ## 🔧 Technologies Used
 
 ### Data Processing & Analysis
