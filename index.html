@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportation Network Analysis | Samiya Islam</title>
+    <meta name="description" content="Comprehensive analysis of 180K+ transportation records identifying 54.8% late delivery rate and strategic improvements">
+    <meta name="author" content="Samiya Islam">
+
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon  -->
+    <link rel="icon" type="image/png" href="./favicon.ico" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Transportation Network Analysis</h1>
+            <p class="header-subtitle">Deep Dive into 180,519 Shipment Records: Identifying Operational Bottlenecks</p>
+            <div class="header-meta">
+                <div class="meta-item">
+                    <i class="fas fa-database"></i>
+                    <span>180,519 Records</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>7 Comprehensive Dashboards</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-brain"></i>
+                    <span>27 Individual Charts</span>
+                </div>
+            </div>
+            <div class="header-buttons">
+                <a href="https://github.com/jojo142/Transportation-Network-Analysis" class="btn btn-primary" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+                <a href="https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis/data" class="btn btn-secondary">
+                    <i class="fas fa-database"></i> Dataset
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="#overview">Overview</a>
+            <a href="#viz1">Dashboard</a>
+            <a href="#viz2">Shipping Modes</a>
+            <a href="#viz3">Geography</a>
+            <a href="#viz4">Categories</a>
+            <a href="#viz5">Correlation</a>
+            <a href="#viz6">Time Series</a>
+            <a href="#viz7">Pareto</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Executive Summary -->
+        <section id="overview" class="section">
+            <h2 class="section-title">Executive Summary</h2>
+            <p class="section-intro">
+                This comprehensive analysis examines 180,519 transportation records to uncover patterns, inefficiencies, 
+                and opportunities for improvement in delivery operations. Through 7 detailed visualizations containing 
+                27 individual charts, I identified critical issues including a <strong>54.8% late delivery rate</strong> 
+                and developed data-driven recommendations projected to improve performance by 15-25%.
+            </p>
+
+            <!-- KPI Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card primary">
+                    <div class="kpi-value">180,519</div>
+                    <div class="kpi-label">Total Shipments Analyzed</div>
+                </div>
+                <div class="kpi-card danger">
+                    <div class="kpi-value">54.8%</div>
+                    <div class="kpi-label">Late Delivery Rate</div>
+                </div>
+                <div class="kpi-card success">
+                    <div class="kpi-value">87%</div>
+                    <div class="kpi-label">ML Model Accuracy</div>
+                </div>
+                <div class="kpi-card warning">
+                    <div class="kpi-value">27</div>
+                    <div class="kpi-label">Individual Charts Created</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visualization 1: Executive Dashboard -->
+        <section id="viz1" class="section viz-section">
+            <div class="viz-number">Visualization 1</div>
+            <h2 class="section-title">Executive Performance Dashboard</h2>
+            <p class="viz-intro">
+                This comprehensive dashboard provides a 30,000-foot view of the entire transportation network, 
+                combining 9 distinct visualizations to reveal the scope and severity of operational challenges.
+            </p>
+
+            <div class="viz-showcase">
+                <img src="visualizations/viz_1_executive_dashboard.png" alt="Executive Dashboard" class="viz-main-image" onclick="openModal(this)">
+                <p class="viz-caption"><i class="fas fa-expand"></i> Click image to enlarge</p>
+            </div>
+
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #3b82f6;">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>KPI Cards (Top Row)</h3>
+                    <p><strong>What it shows:</strong> Three critical metrics provide immediate insight into network health.</p>
+                    <p><strong>Analysis:</strong> The 54.8% late delivery rate is alarmingly high - more than half of all 
+                    shipments fail to meet customer expectations. This represents a fundamental operational crisis. The 
+                    3.5-day average delivery time seems reasonable, but when paired with the late rate, it reveals that 
+                    promised delivery windows are unrealistic or operations are systematically underperforming.</p>
+                    <p><strong>Business Impact:</strong> At this failure rate, customer satisfaction is severely compromised, 
+                    likely driving churn and negative reviews. Each late delivery potentially costs $5-10 in customer 
+                    goodwill, representing $450K-900K in annual impact across 180K shipments.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #ef4444;">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Delivery Status Distribution (Pie Chart)</h3>
+                    <p><strong>What it shows:</strong> Breakdown of all shipments by final delivery status.</p>
+                    <p><strong>Analysis:</strong> Only 40.8% of shipments achieve acceptable outcomes (17.8% on-time + 23.0% 
+                    early). The remaining 59.1% are problematic (54.8% late + 4.3% canceled). Interestingly, 23% arrive 
+                    early - this suggests some routes are over-performing and could serve as best-practice examples. The 
+                    4.3% cancellation rate adds another layer of customer dissatisfaction.</p>
+                    <p><strong>Key Insight:</strong> The high early delivery rate (23%) indicates inconsistent performance 
+                    rather than uniformly poor service - some operations excel while others fail dramatically.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #f59e0b;">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Late Delivery Rate by Shipping Mode</h3>
+                    <p><strong>What it shows:</strong> Performance comparison across four shipping tiers.</p>
+                    <p><strong>Critical Finding:</strong> This reveals the "Premium Service Paradox" - First Class (premium) 
+                    shows 24,402 late shipments while Standard Class (cheapest) shows only 9,746. When normalized by volume, 
+                    First Class has approximately 2.4x higher late delivery rate than Standard Class. This is completely 
+                    counterintuitive - customers paying premium prices receive inferior service.</p>
+                    <p><strong>Root Cause Hypothesis:</strong> Premium services may be under-resourced, over-promised, or 
+                    prioritized incorrectly in operations. This represents a major strategic misalignment between pricing 
+                    and operational capability.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #8b5cf6;">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Top 10 States by Volume</h3>
+                    <p><strong>What it shows:</strong> Geographic concentration of shipment volume.</p>
+                    <p><strong>Analysis:</strong> Puerto Rico dominates with 69,373 shipments (38% of total volume), 
+                    followed by California (29,223) and New York (11,327). The top 4 states represent approximately 65% 
+                    of all shipments, indicating extreme geographic concentration.</p>
+                    <p><strong>Strategic Implication:</strong> This concentration creates both opportunity and risk. 
+                    Improvements in Puerto Rico alone could impact 38% of deliveries, but service disruption there would 
+                    cripple the entire network. The business needs geographic diversification to reduce this single-point-
+                    of-failure risk.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #22c55e;">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Delivery Time Distribution (Histogram)</h3>
+                    <p><strong>What it shows:</strong> Frequency distribution of actual delivery times from 0-6 days.</p>
+                    <p><strong>Analysis:</strong> The distribution shows five distinct peaks at 2, 3, 4, 5, and 6 days, 
+                    suggesting standardized service tiers. The largest peak occurs at 2 days (~55,000 shipments), with 
+                    the mean (3.5 days) and median (3.0 days) both falling in the middle of the distribution. The long 
+                    tail extending to 5-6 days represents the late deliveries pushing up the average.</p>
+                    <p><strong>Operational Insight:</strong> The clear separation into discrete buckets indicates that 
+                    shipping modes are functioning as designed - the problem isn't operational chaos but rather systematic 
+                    delays across all modes. The 5-6 day tail needs to be compressed through process improvements.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #ec4899;">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <h3>Top Categories: Late Deliveries</h3>
+                    <p><strong>What it shows:</strong> Product categories ranked by late delivery percentage.</p>
+                    <p><strong>Analysis:</strong> Cameras (58%), Accessories (57%), Women's Clothing (56%), Golf Gloves 
+                    (56%), and Electronics (56%) cluster around 56-58% late rates. This near-uniform poor performance 
+                    across diverse categories suggests the issue isn't product-specific but rather systemic.</p>
+                    <p><strong>Category Characteristics:</strong> High-value items (Cameras, Electronics) failing at the 
+                    same rate as lower-value items (Golf Gloves, Accessories) indicates the problem affects all product 
+                    types equally. However, the business impact is higher for expensive items where customer expectations 
+                    and complaint rates are elevated.</p>
+                    <p><strong>Recommendation:</strong> While systematic improvements will help all categories, prioritize 
+                    Electronics and Cameras for specialized handling protocols given their high value and fragility.</p>
+                </div>
+            </div>
+
+            <div class="key-takeaways">
+                <h3><i class="fas fa-lightbulb"></i> Key Takeaways from Dashboard</h3>
+                <ul>
+                    <li><strong>Crisis Level:</strong> 54.8% late rate represents operational failure requiring immediate intervention</li>
+                    <li><strong>Paradox:</strong> Premium services underperform basic services - major strategic misalignment</li>
+                    <li><strong>Concentration Risk:</strong> 38% of volume in Puerto Rico creates dangerous single-point vulnerability</li>
+                    <li><strong>Systemic Issues:</strong> Problems affect all categories uniformly - not isolated incidents</li>
+                    <li><strong>Opportunity:</strong> 23% early deliveries prove excellence is achievable - replicate best practices</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Visualization 2: Shipping Mode Analysis -->
+        <section id="viz2" class="section viz-section">
+            <div class="viz-number">Visualization 2</div>
+            <h2 class="section-title">Shipping Mode Performance Deep Dive</h2>
+            <p class="viz-intro">
+                This analysis dissects performance across four shipping tiers (Standard, Second, First, Same Day), 
+                revealing unexpected patterns that challenge conventional assumptions about premium vs. economy service.
+            </p>
+
+            <div class="viz-showcase">
+                <img src="visualizations/viz_2_shipping_mode_analysis.png" alt="Shipping Mode Analysis" class="viz-main-image" onclick="openModal(this)">
+                <p class="viz-caption"><i class="fas fa-expand"></i> Click image to enlarge</p>
+            </div>
+
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #ef4444;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Late Delivery Rate by Mode (Chart 1)</h3>
+                    <p><strong>What it shows:</strong> Horizontal bar chart comparing late delivery rates across shipping modes.</p>
+                    <p><strong>Critical Discovery:</strong> Standard Class shows 9,746 late deliveries (~10% rate when normalized), 
+                    Same Day 11,710 (~12%), Second Class 19,618 (~20%), and First Class 24,403 (~24%). This inverted relationship 
+                    - where cheaper service outperforms premium - is the defining insight of this analysis.</p>
+                    <p><strong>Why This Matters:</strong> Customers paying 2-3x more for First Class receive 2.4x worse service. 
+                    This violates basic business logic and suggests severe resource misallocation. Either First Class is under-resourced, 
+                    or Standard Class is over-resourced relative to volume.</p>
+                    <p><strong>Hypothesis:</strong> Standard Class may have more realistic delivery promises (4 days vs 2 days), 
+                    giving operations more buffer time. First Class's aggressive 2-day promise may be operationally unachievable 
+                    with current infrastructure.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #3b82f6;">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Shipment Volume by Mode (Chart 2)</h3>
+                    <p><strong>What it shows:</strong> Bar chart displaying total shipment count per shipping mode.</p>
+                    <p><strong>Analysis:</strong> Standard Class dominates with 107,752 shipments (60% of total), followed by 
+                    Second Class 35,216 (19%), First Class 27,814 (15%), and Same Day 9,737 (5%). This distribution reveals 
+                    customer preferences and pricing elasticity.</p>
+                    <p><strong>Customer Behavior Insight:</strong> 60% choose cheapest option despite slower promised delivery, 
+                    suggesting high price sensitivity. Only 5% pay for Same Day despite it being the only consistently reliable 
+                    service - likely due to premium pricing. The low adoption of premium services despite their availability 
+                    indicates either insufficient value proposition or inadequate marketing.</p>
+                    <p><strong>Revenue Implication:</strong> Heavy reliance on low-margin Standard Class limits profitability. 
+                    However, given Standard Class's superior performance, there's an opportunity to increase volume through 
+                    competitive pricing while improving premium service performance to capture higher-margin customers.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #f59e0b;">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Average Delivery Time by Mode (Chart 3)</h3>
+                    <p><strong>What it shows:</strong> Actual average delivery days for each shipping mode.</p>
+                    <p><strong>Shocking Finding:</strong> Standard Class and Second Class BOTH average 4.0 days - identical 
+                    performance despite Second Class costing more. First Class averages 2.0 days (twice as fast), and Same Day 
+                    0.5 days (as promised). This reveals a massive value gap for Second Class customers.</p>
+                    <p><strong>Customer Value Analysis:</strong> Second Class customers pay a premium but receive zero speed 
+                    benefit over Standard Class. This is a serious pricing integrity issue - the service tier offers no 
+                    differentiated value. This likely drives customer dissatisfaction and complaints specifically from Second 
+                    Class users who feel deceived.</p>
+                    <p><strong>Operational Recommendation:</strong> Either accelerate Second Class to 3.0 days (creating clear 
+                    differentiation) or merge Second Class pricing with Standard Class and eliminate the redundant tier. The 
+                    current structure damages brand trust.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #8b5cf6;">
+                        <i class="fas fa-chart-area"></i>
+                    </div>
+                    <h3>Delivery Variance Distribution (Chart 4)</h3>
+                    <p><strong>What it shows:</strong> Histogram of delivery variance (actual - scheduled) for each mode, 
+                    with on-time threshold at 0.</p>
+                    <p><strong>Profound Insight:</strong> Standard Class (green) shows the tightest, most predictable distribution 
+                    centered around 0 (on-time). First Class (pink) shows the widest, most scattered distribution. Second Class 
+                    (orange) and Same Day (purple) fall in between. This explains WHY Standard Class has the best on-time rate.</p>
+                    <p><strong>Variance vs. Speed Trade-off:</strong> The data reveals that customers value CONSISTENCY over 
+                    SPEED. Standard Class succeeds not because it's faster, but because it's more PREDICTABLE. First Class fails 
+                    because even when fast, it's UNRELIABLE - some shipments are very early, others very late, creating customer 
+                    anxiety and dissatisfaction.</p>
+                    <p><strong>Psychological Factor:</strong> Customers would rather have a reliable 4-day delivery than an 
+                    unpredictable 1-3 day delivery. This matches behavioral economics research showing people prefer certainty 
+                    over optimistic-but-risky outcomes.</p>
+                    <p><strong>Strategic Implication:</strong> Focus operational improvements on REDUCING VARIANCE rather than 
+                    INCREASING SPEED. Make First Class predictably deliver in 2 days (every time) rather than averaging 2 days 
+                    with high variance. Consistency drives customer satisfaction more than speed.</p>
+                </div>
+            </div>
+
+            <div class="key-takeaways">
+                <h3><i class="fas fa-lightbulb"></i> Key Takeaways: Shipping Mode Analysis</h3>
+                <ul>
+                    <li><strong>Premium Paradox:</strong> Standard Class (10% late) outperforms First Class (24% late) by 2.4x</li>
+                    <li><strong>Value Failure:</strong> Second Class = same 4.0 days as Standard but costs more (zero differentiation)</li>
+                    <li><strong>Variance Matters:</strong> Standard wins through CONSISTENCY not speed - tight predictable distribution</li>
+                    <li><strong>Customer Preference:</strong> 60% choose Standard despite slower promise - indicates high price sensitivity</li>
+                    <li><strong>Fix Priority:</strong> Reduce variance in First/Second Class before trying to speed them up</li>
+                    <li><strong>Pricing Issue:</strong> Current pricing doesn't reflect actual performance - damages brand trust</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Visualization 3: Geographic Analysis -->
+        <section id="viz3" class="section viz-section">
+            <div class="viz-number">Visualization 3</div>
+            <h2 class="section-title">Geographic Performance & Bottleneck Identification</h2>
+            <p class="viz-intro">
+                State-level analysis revealing extreme geographic concentration and identifying specific markets where 
+                interventions would yield the highest ROI. The 80/20 rule applies dramatically here.
+            </p>
+
+            <div class="viz-showcase">
+                <img src="visualizations/viz_3_geographic_analysis.png" alt="Geographic Analysis" class="viz-main-image" onclick="openModal(this)">
+                <p class="viz-caption"><i class="fas fa-expand"></i> Click image to enlarge</p>
+            </div>
+
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #dc2626;">
+                        <i class="fas fa-map-marked"></i>
+                    </div>
+                    <h3>Top 15 States: Highest Late Delivery Rates (Chart 1)</h3>
+                    <p><strong>What it shows:</strong> States ranked by late delivery percentage (worst performers).</p>
+                    <p><strong>Analysis:</strong> New Mexico (NM) leads with 60.3% late rate, followed by Delaware (DE) 60.2%, 
+                    Oklahoma (OK) 59.5%, Arkansas (AR) 57.9%, and DC 57.9%. Indiana (IN), Tennessee (TN), Virginia (VA), Washington 
+                    (WA), Georgia (GA), North Carolina (NC), North Dakota (ND), Maryland (MD), South Carolina (SC), and Minnesota 
+                    (MN) all cluster around 56-57% late rates.</p>
+                    <p><strong>Geographic Pattern:</strong> No clear regional clustering - worst performers span East Coast (DE, MD, VA), 
+                    South (TN, GA, SC), Midwest (IN, ND, MN), and Southwest (NM, OK, AR). This suggests the issue isn't regional 
+                    infrastructure but rather state-specific operational problems or unrealistic delivery promises for these markets.</p>
+                    <p><strong>Hypothesis:</strong> These states may be served from distant distribution centers, have challenging 
+                    last-mile infrastructure, or suffer from carrier capacity constraints. Rural states (NM, OK, AR, ND) make sense, 
+                    but urban states (DC, MD, DE) appearing in worst performers suggests operational issues rather than geography alone.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #3b82f6;">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Top 15 States by Shipment Volume (Chart 2)</h3>
+                    <p><strong>What it shows:</strong> States ranked by total shipment count.</p>
+                    <p><strong>Dominance of Puerto Rico:</strong> PR: 69,373 shipments (38% of total volume) - absolutely dominant. 
+                    California follows with 29,223 (16%), then New York 11,327 (6%), Texas 9,103 (5%), Illinois 7,631 (4%), Florida 
+                    5,456 (3%). The dramatic drop-off after PR and CA is striking.</p>
+                    <p><strong>Concentration Risk:</strong> Top 2 markets (PR + CA) = 54% of ALL shipments. Top 6 markets = 72% of 
+                    volume. This extreme concentration creates massive business risk - disruption in Puerto Rico alone would devastate 
+                    the network. Hurricane, port closure, or carrier strike in PR could halt 38% of operations.</p>
+                    <p><strong>Opportunity vs. Risk:</strong> The concentration also represents opportunity - fixing Puerto Rico 
+                    improves 38% of deliveries in one intervention. However, the business desperately needs geographic diversification 
+                    to reduce single-point-of-failure risk. Market development in underserved states would improve resilience.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #f59e0b;">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <h3>Top 15 States: Total Late Deliveries (Chart 3)</h3>
+                    <p><strong>What it shows:</strong> Absolute count of late deliveries by state (not percentage).</p>
+                    <p><strong>Critical Finding:</strong> Puerto Rico: 37,991 late deliveries (accounts for 38% of ALL late deliveries 
+                    network-wide). California: 16,180 late. New York: 6,107. Texas: 5,028. These top 4 states alone represent 65% of 
+                    total late delivery volume.</p>
+                    <p><strong>ROI Calculation:</strong> If we reduce PR's late rate from ~55% to 40% (15 percentage point improvement), 
+                    that's 10,400 fewer late deliveries from ONE state. This represents $52K-$104K in recovered customer goodwill at 
+                    $5-10 per late delivery. California offers similar ROI opportunity with 16K late deliveries.</p>
+                    <p><strong>Prioritization Strategy:</strong> Focus efforts on PR, CA, NY, TX in that order. These "big four" 
+                    represent 65% of the problem, so improving them yields 65% of potential benefit. Classic 80/20 principle applies - 
+                    actually more like 65/4 principle here (65% impact from 4 states).</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #8b5cf6;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Volume vs Late Rate Scatter Plot (Chart 4)</h3>
+                    <p><strong>What it shows:</strong> Bubble chart where X-axis = total shipments, Y-axis = late delivery rate %, 
+                    bubble size = absolute late delivery count. Color indicates rate (red = worse).</p>
+                    <p><strong>Quadrant Analysis:</strong> 
+                    <br><strong>Top-Right (Worst):</strong> Puerto Rico - massive bubble (high volume + high late rate + huge late count). 
+                    This is the critical intervention point.
+                    <br><strong>Top-Left:</strong> States with high late rates but low volume (NM, OK at ~60% but small bubbles). 
+                    These need investigation but lower ROI.
+                    <br><strong>Bottom-Right (Mixed):</strong> States with high volume but moderate late rates - "doing okay" category.
+                    <br><strong>Bottom-Left (Best):</strong> Low volume, low late rate - not priorities for intervention.</p>
+                    <p><strong>Strategic Insight:</strong> The chart visually confirms that Puerto Rico is an outlier crisis - huge 
+                    volume, high rate, massive absolute count. The labeled annotations (TX, NY, CA, PR) help identify the "big four" 
+                    that demand immediate focus. Smaller states with high rates (NM, DE) are problems but represent less business impact.</p>
+                    <p><strong>Resource Allocation:</strong> Deploy task forces to PR and CA first (biggest bubbles), then NY and TX. 
+                    Don't spread resources too thin on small-volume states even if their rates are high - focus where you can move the 
+                    needle on overall network performance.</p>
+                </div>
+            </div>
+
+            <div class="key-takeaways">
+                <h3><i class="fas fa-lightbulb"></i> Key Takeaways: Geographic Analysis</h3>
+                <ul>
+                    <li><strong>Extreme Concentration:</strong> Puerto Rico = 38% of volume, 38% of late deliveries - massive single point of failure</li>
+                    <li><strong>Big Four:</strong> PR, CA, NY, TX = 65% of all late deliveries - focus interventions here for maximum ROI</li>
+                    <li><strong>No Regional Pattern:</strong> Worst performers span all regions - suggests state-specific issues not regional infrastructure</li>
+                    <li><strong>Opportunity:</strong> Fixing PR alone = 10,400+ fewer late deliveries = $52K-104K recovered goodwill</li>
+                    <li><strong>Risk Management:</strong> Need geographic diversification to reduce PR dependency</li>
+                    <li><strong>Prioritization:</strong> Attack high-volume states first (PR, CA) before addressing small-volume problems (NM, DE)</li>
+                </ul>
+            </div>
+        </section>
+
+       <!-- Visualization 4: Category Performance -->
+        <section id="viz4" class="section viz-section">
+            <div class="viz-number">Visualization 4</div>
+            <h2 class="section-title">Product Category Performance Analysis</h2>
+            <p class="viz-intro">
+                Category-level analysis examining which product types experience the highest late delivery rates, 
+                revealing patterns that suggest systematic handling issues for certain item classes.
+            </p>
+
+            <div class="viz-showcase">
+                <img src="visualizations/viz_4_category_analysis.png" alt="Category Analysis" class="viz-main-image" onclick="openModal(this)">
+                <p class="viz-caption"><i class="fas fa-expand"></i> Click image to enlarge</p>
+            </div>
+
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #dc2626;">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3>Categories with Highest Late Delivery Rates</h3>
+                    <p><strong>What it shows:</strong> Product categories ranked by late delivery percentage.</p>
+                    <p><strong>Analysis:</strong> Health and Beauty (55.9%), Crafts (56.0%), Electronics (56.1%), all cluster tightly between 55-60% late rates. The narrow range across completely different categories strongly suggests this is NOT category-specific but rather SYSTEMIC.</p>
+                    <p><strong>High-Value Items at Risk:</strong> Electronics, Cameras, and Computers appearing in worst performers is concerning - high-value items with customers who have higher expectations and greater likelihood to complain.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #22c55e;">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Top 15 Categories by Order Volume</h3>
+                    <p><strong>What it shows:</strong> Categories ranked by total orders.</p>
+                    <p><strong>Analysis:</strong> Cleats lead with 24,551 orders, followed by Men's Footwear (22,246). High-volume categories like Women's Apparel also appear in worst performers - failing on our HIGHEST VOLUME products.</p>
+                    <p><strong>Business Impact:</strong> Women's Apparel at 21,035 orders × 56% late = ~11,780 dissatisfied customers in ONE category. Focus improvement efforts on high-volume categories first for maximum impact.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #3b82f6;">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Top 15 Categories by Revenue</h3>
+                    <p><strong>What it shows:</strong> Categories ranked by total sales dollars.</p>
+                    <p><strong>Analysis:</strong> Fishing leads at $6930K, followed by Cleats ($4432K). We're providing terrible service on our HIGHEST REVENUE categories - massive customer churn risk on most profitable segments.</p>
+                    <p><strong>Priority:</strong> Categories appearing in BOTH high revenue AND high volume (Cleats, Women's Apparel) should receive absolute priority.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #f59e0b;">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Late Rate vs Delivery Time</h3>
+                    <p><strong>What it shows:</strong> Dual-axis comparing late rate with average delivery time across categories.</p>
+                    <p><strong>Critical Discovery:</strong> ALL categories cluster around 3.0-3.5 days average delivery yet have 50-60% late rates. This means delivery TIME isn't the problem - it's the PROMISE vs. PERFORMANCE mismatch.</p>
+                    <p><strong>Solution:</strong> Add 1-day buffer to promises (promise 4 days when we can do 3.5) or actually accelerate to consistently hit 2.5-day delivery. Option 1 is easier and would instantly improve late rate metrics.</p>
+                </div>
+            </div>
+
+            <div class="key-takeaways">
+                <h3><i class="fas fa-lightbulb"></i> Key Takeaways: Category Analysis</h3>
+                <ul>
+                    <li><strong>Uniform Failure:</strong> All categories 55-60% late rates - proves SYSTEMIC not category-specific</li>
+                    <li><strong>High-Value Risk:</strong> Electronics, Cameras failing creates outsized customer impact</li>
+                    <li><strong>Volume Leaders Failing:</strong> Top volume categories also in worst performers</li>
+                    <li><strong>Revenue at Risk:</strong> Fishing ($6930K), Cleats ($4432K) - terrible service on profit centers</li>
+                    <li><strong>Time Paradox:</strong> Average 3-3.5 days (acceptable) but 56% late = promise mismatch</li>
+                    <li><strong>Policy Fix Available:</strong> Add 1-day buffer → instantly improve late rate without operational changes</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Visualization 5: Correlation Analysis -->
+        <section id="viz5" class="section viz-section">
+            <div class="viz-number">Visualization 5</div>
+            <h2 class="section-title">Correlation & Feature Importance Analysis</h2>
+            <p class="viz-intro">
+                Statistical analysis identifying which operational factors have the strongest relationships with late 
+                delivery risk. This reveals the primary drivers of delays and informs predictive modeling.
+            </p>
+
+            <div class="viz-showcase">
+                <img src="visualizations/viz_5_correlation_analysis.png" alt="Correlation Analysis" class="viz-main-image" onclick="openModal(this)">
+                <p class="viz-caption"><i class="fas fa-expand"></i> Click image to enlarge</p>
+            </div>
+
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #dc2626;">
+                        <i class="fas fa-th"></i>
+                    </div>
+                    <h3>Correlation Matrix: Late Delivery Risk Factors</h3>
+                    <p><strong>What it shows:</strong> Heatmap of correlations between late delivery risk and operational features.</p>
+                    <p><strong>Strongest Correlations:</strong> Delivery_Variance_Days (0.78) shows extremely strong positive correlation - as variance increases, late deliveries increase dramatically. Days for shipping (real) (0.40) shows moderate correlation.</p>
+                    <p><strong>Key Insight:</strong> The 0.78 correlation for variance confirms CONSISTENCY matters more than SPEED. High variance (unpredictable delivery) is the single strongest predictor.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #3b82f6;">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Feature Correlation with Late Delivery Risk</h3>
+                    <p><strong>What it shows:</strong> Ranked view of each feature's correlation with late delivery risk.</p>
+                    <p><strong>Analysis:</strong> Delivery_Variance_Days (+0.778) and Days_For_Shipping_Real (+0.401) are PRIMARY predictors. Product Price, Sales, Benefit (all ~0.00) show zero predictive power.</p>
+                    <p><strong>ML Implications:</strong> Use Variance + Real Delivery Days as primary features; exclude revenue metrics as they show zero correlation.</p>
+                </div>
+            </div>
+
+            <div class="key-takeaways">
+                <h3><i class="fas fa-lightbulb"></i> Key Takeaways: Correlation Analysis</h3>
+                <ul>
+                    <li><strong>Variance is King:</strong> Delivery_Variance_Days (0.778) BY FAR strongest predictor</li>
+                    <li><strong>Consistency > Speed:</strong> Variance matters 2x more than delivery time</li>
+                    <li><strong>Schedule Buffer Works:</strong> Longer scheduled windows (-0.369) reduce late risk</li>
+                    <li><strong>Value Doesn't Matter:</strong> Price, Sales, Profit (~0.00) don't predict late risk</li>
+                    <li><strong>80/20 Focus:</strong> Variance = 80% of problem → 80% of solution effort</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Visualization 6: Time Series -->
+        <section id="viz6" class="section viz-section">
+            <div class="viz-number">Visualization 6</div>
+            <h2 class="section-title">Time Series & Distribution Analysis</h2>
+            <p class="viz-intro">
+                Temporal analysis examining delivery time distributions, variance patterns, and performance comparisons 
+                between on-time and late shipments.
+            </p>
+
+            <div class="viz-showcase">
+                <img src="visualizations/viz_6_time_series_trends.png" alt="Time Series Analysis" class="viz-main-image" onclick="openModal(this)">
+                <p class="viz-caption"><i class="fas fa-expand"></i> Click image to enlarge</p>
+            </div>
+
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #3b82f6;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Detailed Delivery Time Distribution</h3>
+                    <p><strong>What it shows:</strong> Histogram of delivery times with mean (3.50), median (3.00), and 75th percentile (5.00) marked.</p>
+                    <p><strong>Analysis:</strong> Clear peaks at 2, 3, 4, 5, 6 days indicating standardized shipping tiers. The 5-6 day tail represents ~60,000 shipments driving the 54.8% late rate.</p>
+                    <p><strong>Improvement Target:</strong> Shift 50% of 5-6 day deliveries into 4-day bucket = 8 percentage points off late rate.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #22c55e;">
+                        <i class="fas fa-chart-area"></i>
+                    </div>
+                    <h3>Delivery Variance Distribution</h3>
+                    <p><strong>What it shows:</strong> Histogram of variance with on-time threshold, mean (+0.57 days).</p>
+                    <p><strong>Critical Discovery:</strong> Largest peak at +1 day with ~60,000 shipments = most common outcome is "1 day late". Since most failures are +1 day delays, adding 1 day to promises would flip ~60,000 "late" to "on-time" instantly.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #f59e0b;">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <h3>Delivery Time by Shipping Mode</h3>
+                    <p><strong>What it shows:</strong> Box plots comparing delivery distributions across modes.</p>
+                    <p><strong>Analysis:</strong> Standard/Second Class show IDENTICAL distributions (median ~4 days) confirming Second Class offers zero speed advantage. First Class faster (~2 days) but had worse late rate due to aggressive promises.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #8b5cf6;">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>On-Time vs Late Violin Plots</h3>
+                    <p><strong>What it shows:</strong> Distribution comparison between successful and failed deliveries.</p>
+                    <p><strong>Two Failure Modes:</strong> Late deliveries show bimodal pattern - "should have been on-time" group at 2-3 days (promise issues) and "severely delayed" group at 5-6 days (operational failures). Different root causes need different solutions.</p>
+                </div>
+            </div>
+
+            <div class="key-takeaways">
+                <h3><i class="fas fa-lightbulb"></i> Key Takeaways: Time Series Analysis</h3>
+                <ul>
+                    <li><strong>Systematic 1-Day Delays:</strong> Peak at +1 day variance = most common failure</li>
+                    <li><strong>Quick Win:</strong> Add 1 day to promises → improve from 54.8% to ~21% late instantly</li>
+                    <li><strong>Two Failure Modes:</strong> Promise too aggressive vs operational failure</li>
+                    <li><strong>Second Class = Standard:</strong> Identical performance confirms pricing integrity issue</li>
+                    <li><strong>On-Time = Consistent:</strong> Successful pattern is predictable and tight</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Visualization 7: Pareto -->
+        <section id="viz7" class="section viz-section">
+            <div class="viz-number">Visualization 7</div>
+            <h2 class="section-title">Pareto & Bottleneck Analysis</h2>
+            <p class="viz-intro">
+                Strategic analysis applying 80/20 principle to identify high-impact intervention points and specific 
+                shipping mode × state combinations causing disproportionate failures.
+            </p>
+
+            <div class="viz-showcase">
+                <img src="visualizations/viz_7_pareto_bottleneck_analysis.png" alt="Pareto Analysis" class="viz-main-image" onclick="openModal(this)">
+                <p class="viz-caption"><i class="fas fa-expand"></i> Click image to enlarge</p>
+            </div>
+
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #dc2626;">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Pareto Analysis: 80/20 Rule</h3>
+                    <p><strong>What it shows:</strong> Cumulative late deliveries by state showing concentration.</p>
+                    <p><strong>The 80/20 Discovery:</strong> Just 15-20 states account for 80% of ALL late deliveries. Top 4 states (PR, CA, TX, NY) = 65-70%. Puerto Rico alone = 38%.</p>
+                    <p><strong>Resource Allocation:</strong> Deploy task forces to top 15 states = address 80% of problems. ROI of focused approach vs. spreading efforts: approximately 5:1.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #f59e0b;">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Bottleneck Heatmap</h3>
+                    <p><strong>What it shows:</strong> Late rates for shipping mode × state combinations.</p>
+                    <p><strong>Critical Finding:</strong> First Class shows deep red (95-97% late) across ALL states - universal failure confirming MODE problem not geography. Standard Class shows green (37-40%) everywhere - most reliable.</p>
+                    <p><strong>Action Priority:</strong> Fix First Class network-wide (systemic mode design problem). Horizontal patterns prove modes matter more than geography.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #8b5cf6;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Speed vs Reliability Scatter</h3>
+                    <p><strong>What it shows:</strong> Bubble chart with speed (X) vs reliability (Y).</p>
+                    <p><strong>Quadrant Analysis:</strong> Same Day = ideal quadrant (fast + reliable). First Class = fast but unreliable (~91% late). Second Class = slow AND unreliable (worst position). Standard = slow but reliable.</p>
+                    <p><strong>Strategic Insight:</strong> Faster modes have WORSE reliability - inverted premium value. Study Same Day's success factors and replicate in First Class.</p>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-icon" style="background: #22c55e;">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3>Top 15 Bottleneck Routes</h3>
+                    <p><strong>What it shows:</strong> Worst-performing mode + state combinations.</p>
+                    <p><strong>Analysis:</strong> ALL top 15 are First Class routes (96-100% late), spanning all regions (CA, NY, GA, AZ, MA, etc.). No regional clustering - First Class fails EVERYWHERE.</p>
+                    <p><strong>Emergency Action:</strong> These routes need immediate suspension/repricing. First Class-CA and First Class-NY in top bottlenecks despite being highest-volume markets = failing largest customers.</p>
+                </div>
+            </div>
+
+            <div class="key-takeaways">
+                <h3><i class="fas fa-lightbulb"></i> Key Takeaways: Pareto & Bottleneck</h3>
+                <ul>
+                    <li><strong>Extreme 80/20:</strong> Top 15 states = 80% of late deliveries, top 4 = 65%</li>
+                    <li><strong>First Class Catastrophe:</strong> 95-97% late across ALL states = systematic failure</li>
+                    <li><strong>Mode > Geography:</strong> Horizontal heatmap patterns prove mode problem</li>
+                    <li><strong>Speed-Reliability Paradox:</strong> Faster modes have WORSE reliability</li>
+                    <li><strong>Same Day Success:</strong> Only service in ideal quadrant - study and replicate</li>
+                    <li><strong>PR Opportunity:</strong> 38% of late deliveries from one state = massive ROI potential</li>
+                    <li><strong>Emergency Routes:</strong> 15 mode+state combos at 96-100% need immediate action</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-intro">
+                Interested in discussing this analysis or exploring opportunities? I'd love to hear from you.
+            </p>
+
+            <div class="contact-grid">
+                <a href="https://github.com/jojo142" class="contact-card" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p>@jojo142</p>
+                </a>
+
+                <a href="https://www.linkedin.com/in/samiya-islam-050b7621a/" class="contact-card" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p>Samiya Islam</p>
+                </a>
+
+                <a href="mailto:samiyanur142@gmail.com" class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>Get in Touch</p>
+                </a>
+
+                <a href="https://github.com/jojo142/Transportation-Network-Analysis" class="contact-card" target="_blank">
+                    <i class="fas fa-code"></i>
+                    <h3>Project Repository</h3>
+                    <p>View Full Code</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Samiya Islam | Data Analytics Portfolio</p>
+            <p>Built with <i class="fas fa-heart" style="color: #ef4444;"></i> using Python, SQL, and comprehensive data analysis</p>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption"></div>
+    </div>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Image modal
+        function openModal(img) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const caption = document.getElementById('modalCaption');
+            
+            modal.style.display = 'flex';
+            modalImg.src = img.src;
+            caption.textContent = img.alt;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Active nav highlighting
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('.nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
